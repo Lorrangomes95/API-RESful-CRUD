@@ -1,13 +1,19 @@
-import { Router, Request, Response } from "express"
+import { Router} from "express"
+import filmes from "./controllers/paginaInicial"
 
 
 const route = Router()
 
-// Rotas:
-route.get("/", (req: Request, res: Response) => {
-    res.status(200).json({
-        massage: "OK"
-    })
-})
+// listar:
+route.get("/", filmes)
+
+// criar:
+route.post("/criar")
+
+// editar:
+route.put("/editar")
+
+// deletar:
+route.delete("/deletar")
 
 export default route
