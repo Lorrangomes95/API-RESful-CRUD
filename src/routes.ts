@@ -1,14 +1,15 @@
-import { Router} from "express"
+import express from "express"
 import filmes from "./controllers/paginaInicial"
+import criarFilme from "./controllers/criarFilme"
 
 
-const route = Router()
+const route = express.Router()
 
 // listar:
-route.get("/", filmes)
+route.get("/filmes", filmes)
 
 // criar:
-route.post("/criar")
+route.post("/criar", criarFilme)
 
 // editar:
 route.put("/editar")
